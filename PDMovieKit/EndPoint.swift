@@ -28,10 +28,11 @@ enum ArchiveEndPoint: EndPoint {
         /// collection, and have a mediatype of `movies`. Each movie object, will specify the
         /// identifier, average rating, description, and tile of the movie.
         case let .movies(category, page):
+            let subjects = category.tags.joined(separator: " OR ")
             return URL(string: """
                 https://archive.org/advancedsearch.php?\
                 q=collection:(feature_films) AND \
-                subject:(\(category.tags.joined(separator: " OR "))) \
+                subject:(\(subjects)) \
                 AND mediatype:(movies)\
                 &fl[]=identifier\
                 &fl[]=avg_rating\
