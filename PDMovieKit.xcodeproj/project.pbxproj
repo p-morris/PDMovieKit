@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7218A7EA224CEE6F002C1FEB /* PDCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218A7E9224CEE6F002C1FEB /* PDCategory.swift */; };
+		7218A7ED224CF3F1002C1FEB /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 7218A7EC224CF3F1002C1FEB /* categories.json */; };
+		7218A7F0224CF7B7002C1FEB /* PDMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218A7EF224CF7B7002C1FEB /* PDMovie.swift */; };
+		7218A7F2224CF895002C1FEB /* PDMovieMetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218A7F1224CF895002C1FEB /* PDMovieMetaData.swift */; };
+		7218A7F6224CFD12002C1FEB /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218A7F5224CFD12002C1FEB /* EndPoint.swift */; };
+		7218A7F8224D1A17002C1FEB /* URLSession+Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218A7F7224D1A17002C1FEB /* URLSession+Decoding.swift */; };
 		7236CA66224C055800CDEDBD /* PDMovieKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7236CA5C224C055800CDEDBD /* PDMovieKit.framework */; };
 		7236CA6B224C055800CDEDBD /* PDMovieKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7236CA6A224C055800CDEDBD /* PDMovieKitTests.swift */; };
 		7236CA6D224C055800CDEDBD /* PDMovieKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7236CA5F224C055800CDEDBD /* PDMovieKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,6 +29,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7218A7E9224CEE6F002C1FEB /* PDCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDCategory.swift; sourceTree = "<group>"; };
+		7218A7EC224CF3F1002C1FEB /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = categories.json; path = ../../../Desktop/categories.json; sourceTree = "<group>"; };
+		7218A7EF224CF7B7002C1FEB /* PDMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDMovie.swift; sourceTree = "<group>"; };
+		7218A7F1224CF895002C1FEB /* PDMovieMetaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDMovieMetaData.swift; sourceTree = "<group>"; };
+		7218A7F5224CFD12002C1FEB /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		7218A7F7224D1A17002C1FEB /* URLSession+Decoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Decoding.swift"; sourceTree = "<group>"; };
 		7236CA5C224C055800CDEDBD /* PDMovieKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PDMovieKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7236CA5F224C055800CDEDBD /* PDMovieKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDMovieKit.h; sourceTree = "<group>"; };
 		7236CA60224C055800CDEDBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,12 +62,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7218A80F224D24A7002C1FEB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7236CA52224C055800CDEDBD = {
 			isa = PBXGroup;
 			children = (
 				7236CA5E224C055800CDEDBD /* PDMovieKit */,
 				7236CA69224C055800CDEDBD /* PDMovieKitTests */,
 				7236CA5D224C055800CDEDBD /* Products */,
+				7218A80F224D24A7002C1FEB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +91,12 @@
 		7236CA5E224C055800CDEDBD /* PDMovieKit */ = {
 			isa = PBXGroup;
 			children = (
+				7218A7EC224CF3F1002C1FEB /* categories.json */,
+				7218A7F7224D1A17002C1FEB /* URLSession+Decoding.swift */,
+				7218A7F5224CFD12002C1FEB /* EndPoint.swift */,
+				7218A7E9224CEE6F002C1FEB /* PDCategory.swift */,
+				7218A7EF224CF7B7002C1FEB /* PDMovie.swift */,
+				7218A7F1224CF895002C1FEB /* PDMovieMetaData.swift */,
 				7236CA5F224C055800CDEDBD /* PDMovieKit.h */,
 				7236CA60224C055800CDEDBD /* Info.plist */,
 			);
@@ -108,6 +134,7 @@
 				7236CA58224C055800CDEDBD /* Sources */,
 				7236CA59224C055800CDEDBD /* Frameworks */,
 				7236CA5A224C055800CDEDBD /* Resources */,
+				7218A7EE224CF6DC002C1FEB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -148,6 +175,7 @@
 				TargetAttributes = {
 					7236CA5B224C055800CDEDBD = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					7236CA64224C055800CDEDBD = {
 						CreatedOnToolsVersion = 10.1;
@@ -160,6 +188,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 7236CA52224C055800CDEDBD;
 			productRefGroup = 7236CA5D224C055800CDEDBD /* Products */;
@@ -177,6 +206,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7218A7ED224CF3F1002C1FEB /* categories.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,11 +219,36 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7218A7EE224CF6DC002C1FEB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7236CA58224C055800CDEDBD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7218A7F0224CF7B7002C1FEB /* PDMovie.swift in Sources */,
+				7218A7F6224CFD12002C1FEB /* EndPoint.swift in Sources */,
+				7218A7F8224D1A17002C1FEB /* URLSession+Decoding.swift in Sources */,
+				7218A7EA224CEE6F002C1FEB /* PDCategory.swift in Sources */,
+				7218A7F2224CF895002C1FEB /* PDMovieMetaData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,7 +394,8 @@
 		7236CA71224C055800CDEDBD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = A7682PK9SF;
@@ -356,6 +412,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.petemorris.PDMovieKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 3;
 			};
@@ -364,7 +421,8 @@
 		7236CA72224C055800CDEDBD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = A7682PK9SF;
@@ -389,6 +447,7 @@
 		7236CA74224C055800CDEDBD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A7682PK9SF;
 				INFOPLIST_FILE = PDMovieKitTests/Info.plist;
@@ -407,6 +466,7 @@
 		7236CA75224C055800CDEDBD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A7682PK9SF;
 				INFOPLIST_FILE = PDMovieKitTests/Info.plist;

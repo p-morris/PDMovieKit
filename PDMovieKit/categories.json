@@ -1,0 +1,254 @@
+{
+    "categories": [
+        {
+            "name": "Silent",
+            "thumbnail": "",
+            "subjects": ["silent film", "Silent", "Silent Film", "silents", "silent", "Silents", "Silent Movie"]
+        },
+        {
+            "name": "Drama",
+            "thumbnail": "",
+            "subjects": ["Drama", "drama", "dramas"]
+        },
+        {
+            "name": "Comedy",
+            "thumbnail": "",
+            "subjects": ["Comedy", "comedy", "comedies", "funny"]
+        },
+        {
+            "name": "Western",
+            "thumbnail": "",
+            "subjects": ["Western", "western"]
+        },
+        {
+            "name": "Horror",
+            "thumbnail": "",
+            "subjects": ["horror", "Horror", "scary", "Scary"]
+        },
+        {
+            "name": "Romance",
+            "thumbnail": "",
+            "subjects": ["Romance", "romance"]
+        },
+        {
+            "name": "Billy Bitzer",
+            "thumbnail": "",
+            "subjects": ["Billy Bitzer"]
+        },
+        {
+            "name": "Mystery",
+            "thumbnail": "",
+            "subjects": ["Mystery", "mystery", "mysteries"]
+        },
+        {
+            "name": "Crime",
+            "thumbnail": "",
+            "subjects": ["Crime", "crime"]
+        },
+        {
+            "name": "Gen X",
+            "thumbnail": "",
+            "subjects": ["Gen X"]
+        },
+        {
+            "name": "D.W. Griffith",
+            "thumbnail": "",
+            "subjects": ["D.W. Griffith"]
+        },
+        {
+            "name": "D.W. Griffith",
+            "thumbnail": "",
+            "subjects": ["D.W. Griffith"]
+        },
+        {
+            "name": "Georges Méliès",
+            "thumbnail": "",
+            "subjects": ["Georges Méliès"]
+        },
+        {
+            "name": "Short Film",
+            "thumbnail": "",
+            "subjects": ["Short Film", "short film", "Short film"]
+        },
+        {
+            "name": "Fantasy",
+            "thumbnail": "",
+            "subjects": ["Fantasy", "fantasy"]
+        },
+        {
+            "name": "Adventure",
+            "thumbnail": "",
+            "subjects": ["Adventure", "adventure"]
+        },
+        {
+            "name": "Short",
+            "thumbnail": "",
+            "subjects": ["Short", "short"]
+        },
+        {
+            "name": "Murder",
+            "thumbnail": "",
+            "subjects": ["Murder", "murder"]
+        },
+        {
+            "name": "Murder",
+            "thumbnail": "",
+            "subjects": ["Murder", "murder"]
+        },
+        {
+            "name": "Lutz Mommartz",
+            "thumbnail": "",
+            "subjects": ["Lutz Mommartz"]
+        },
+        {
+            "name": "Action",
+            "thumbnail": "",
+            "subjects": ["Action", "action"]
+        },
+        {
+            "name": "Thriller",
+            "thumbnail": "",
+            "subjects": ["Thriller", "thriller"]
+        },
+        {
+            "name": "Charlie Chaplin",
+            "thumbnail": "",
+            "subjects": ["Charlie Chaplin"]
+        },
+        {
+            "name": "Charlie Chaplin",
+            "thumbnail": "",
+            "subjects": ["Sci-Fi", "sci-fi", "Sci Fi", "sci fi"]
+        },
+        {
+            "name": "Mabel Normand",
+            "thumbnail": "",
+            "subjects": ["Mabel Normand"]
+        },
+        {
+            "name": "Musical",
+            "thumbnail": "",
+            "subjects": ["Musical", "musical", "Musicals", "musicals"]
+        },
+        {
+            "name": "Mack Sennett",
+            "thumbnail": "",
+            "subjects": ["Mack Sennett"]
+        },
+        {
+            "name": "Buster Keaton",
+            "thumbnail": "",
+            "subjects": ["Buster Keaton"]
+        },
+        {
+            "name": "Segundo de Chomón",
+            "thumbnail": "",
+            "subjects": ["Segundo de Chomón"]
+        },
+        {
+            "name": "War",
+            "thumbnail": "",
+            "subjects": ["War", "war", "WWII", "WW2"]
+        },
+        {
+            "name": "Mary Pickford",
+            "thumbnail": "",
+            "subjects": ["Mary Pickford"]
+        },
+        {
+            "name": "Roy Rogers",
+            "thumbnail": "",
+            "subjects": ["Roy Rogers"]
+        },
+        {
+            "name": "Monsters",
+            "thumbnail": "",
+            "subjects": ["Monsters", "monsters"]
+        },
+        {
+            "name": "Robert Harron",
+            "thumbnail": "",
+            "subjects": ["Robert Harron"]
+        },
+        {
+            "name": "Animation",
+            "thumbnail": "",
+            "subjects": ["Animation", "animation", "cartoon", "Cartoon", "Animated", "animated"]
+        },
+        {
+            "name": "Disco",
+            "thumbnail": "",
+            "subjects": ["Disco", "disco"]
+        },
+        {
+            "name": "Gerald Ford",
+            "thumbnail": "",
+            "subjects": ["Gerald Ford"]
+        },
+        {
+            "name": "Arthur V. Johnson",
+            "thumbnail": "",
+            "subjects": ["Arthur V. Johnson"]
+        },
+        {
+            "name": "Bela Lugosi",
+            "thumbnail": "",
+            "subjects": ["Bela Lugosi"]
+        },
+        {
+            "name": "Documentary",
+            "thumbnail": "",
+            "subjects": ["Documentary", "documentary"]
+        },
+        {
+            "name": "Sherlock Holmes",
+            "thumbnail": "",
+            "subjects": ["Sherlock Holmes", "sherlock holmes"]
+        },
+        {
+            "name": "Walt Disney",
+            "thumbnail": "",
+            "subjects": ["Walt Disney", "Disneyland"]
+        },
+        {
+            "name": "Dracula",
+            "thumbnail": "",
+            "subjects": ["Dracula", "dracula"]
+        },
+        {
+            "name": "Film-Noir",
+            "thumbnail": "",
+            "subjects": ["Film-Noir", "Film Noir", "film-noir", "film noir"]
+        },
+        {
+            "name": "John Wayne",
+            "thumbnail": "",
+            "subjects": ["John Wayne"]
+        },
+        {
+            "name": "Drugs",
+            "thumbnail": "",
+            "subjects": ["Drugs", "drugs"]
+        },
+        {
+            "name": "Kids",
+            "thumbnail": "",
+            "subjects": ["Kids", "Children's", "kids", "children's", "childrens", "Childrens"]
+        },
+        {
+            "name": "Lee Van Cleef",
+            "thumbnail": "",
+            "subjects": ["Lee Van Cleef"]
+        },
+        {
+            "name": "George Segal",
+            "thumbnail": "",
+            "subjects": ["George Segal"]
+        },
+        {
+            "name": "Ghosts",
+            "thumbnail": "",
+            "subjects": ["Ghosts", "ghosts" "Ghost Story", "ghost story"]
+        }
+    ]
+}
