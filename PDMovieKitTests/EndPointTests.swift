@@ -44,6 +44,18 @@ class EndPointTests: XCTestCase {
         XCTAssertTrue(endPoint.url!.description.contains("subject:(Drama%20OR%20drama%20OR%20dramas)"))
     }
     
+    func test_movies_url_single_subject() {
+        let category = try! JSONDecoder.init().decode(PDCategory.self, from: """
+        {
+            "name": "Drama",
+            "thumbnailURL": "",
+            "tags": ["Drama"]
+        }
+        """.data(using: .utf8)!)
+        let endPoint = ArchiveEndPoint.movies(category: category, page: 1)
+        XCTAssertTrue(endPoint.url!.description.contains("subject:(Drama)"))
+    }
+    
     func test_movies_url() {
         let endPoint = ArchiveEndPoint.movies(category: category, page: 2)
         XCTAssertEqual(endPoint.url!.description, "https://archive.org/advancedsearch.php?q=collection:(feature_films)%20AND%20subject:(Drama%20OR%20drama%20OR%20dramas)%20AND%20mediatype:(movies)&fl%5B%5D=identifier&fl%5B%5D=avg_rating&fl%5B%5D=description&fl%5B%5D=title&sort%5B%5D=downloads%20desc&sort%5B%5D=&sort%5B%5D=&rows=50&output=json&page=2")
