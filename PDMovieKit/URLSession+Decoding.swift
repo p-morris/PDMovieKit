@@ -19,7 +19,7 @@ extension URLSession {
     func decodableRequest<T>(with endPoint: EndPoint,
                              decoder: JSONDecoder = JSONDecoder(),
                              completion: @escaping (T?, Error?) -> Void) where T: Decodable {
-        guard  let url = endPoint.url else {
+        guard let url = endPoint.url else {
             completion(nil, Errors.invalidURL)
             return
         }
