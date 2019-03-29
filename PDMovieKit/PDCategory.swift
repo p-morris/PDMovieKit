@@ -76,7 +76,7 @@ public final class PDCategory: Decodable {
      - Parameters:
         - page: The page number required.
         - session: The `URLSession` to use for the request.
-        - completionQueue: The `DispatchQueue` on which to execute `completion`.
+        - completionQueue: The `OperationQueue` on which to execute `completion`.
         - completion: The code block to be executed asynchronously on `completionQueue` once the request is complete.
             Includes parameter for the movie array (if retrieved successfully), or an error if not.
      */
