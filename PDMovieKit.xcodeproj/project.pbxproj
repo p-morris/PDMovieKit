@@ -24,6 +24,7 @@
 		7236CA6D224C055800CDEDBD /* PDMovieKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7236CA5F224C055800CDEDBD /* PDMovieKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		72820772224E2C9600955C63 /* PDCategoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72820771224E2C9600955C63 /* PDCategoryTests.swift */; };
 		72820776224E3FB800955C63 /* PDMovieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72820775224E3FB800955C63 /* PDMovieTests.swift */; };
+		72820778224E48DB00955C63 /* PDMovieMetaDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72820777224E48DB00955C63 /* PDMovieMetaDataTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		7236CA6C224C055800CDEDBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72820771224E2C9600955C63 /* PDCategoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDCategoryTests.swift; sourceTree = "<group>"; };
 		72820775224E3FB800955C63 /* PDMovieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDMovieTests.swift; sourceTree = "<group>"; };
+		72820777224E48DB00955C63 /* PDMovieMetaDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDMovieMetaDataTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				721565A0224D3FB8008AD19C /* EndPointTests.swift */,
 				72820771224E2C9600955C63 /* PDCategoryTests.swift */,
 				72820775224E3FB800955C63 /* PDMovieTests.swift */,
+				72820777224E48DB00955C63 /* PDMovieMetaDataTests.swift */,
 				7236CA6C224C055800CDEDBD /* Info.plist */,
 			);
 			path = PDMovieKitTests;
@@ -297,6 +300,7 @@
 				72820772224E2C9600955C63 /* PDCategoryTests.swift in Sources */,
 				7215659B224D39D1008AD19C /* MockDecodable.swift in Sources */,
 				721565A1224D3FB8008AD19C /* EndPointTests.swift in Sources */,
+				72820778224E48DB00955C63 /* PDMovieMetaDataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
