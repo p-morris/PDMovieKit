@@ -31,7 +31,7 @@
 		728209BE224E5AD300955C63 /* PDMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728208E6224E545E00955C63 /* PDMovie.swift */; };
 		728209BF224E5AD300955C63 /* PDMovieMetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728208E7224E545E00955C63 /* PDMovieMetaData.swift */; };
 		728209C0224E5AD300955C63 /* URLSession+Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728208E4224E545E00955C63 /* URLSession+Decoding.swift */; };
-		728209F0224E5F4500955C63 /* PDMovieKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 728209EF224E5F4500955C63 /* PDMovieKit.h */; };
+		728209F0224E5F4500955C63 /* PDMovieKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 728209EF224E5F4500955C63 /* PDMovieKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
