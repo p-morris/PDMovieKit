@@ -29,7 +29,11 @@ public final class PDCategory: Decodable {
         /// The domain for PDCategory errors
         static var domain = "PDCategoryErrorDomain"
         /// Represents an error loading the categopries JSON file from disk
-        static var categoryJSONFileMissing = NSError(domain: domain, code: 0, userInfo: [NSLocalizedDescriptionKey: "Failed to load categories from disk"])
+        static var categoryJSONFileMissing = NSError(
+            domain: domain,
+            code: 0,
+            userInfo: [NSLocalizedDescriptionKey: "Failed to load categories from disk"]
+        )
     }
     /**
      Used to access an array of all categories to which movies can belong.
@@ -54,8 +58,8 @@ public final class PDCategory: Decodable {
      - Throws: `PDCategory.Errors.categoryJSONFileMissing` if `jsonFileName` can't be loaded from disk.
      */
     internal static func categories(decoder: JSONDecoder = JSONDecoder(),
-                           jsonFileName: String = "categories",
-                           bundle: Bundle = Bundle(for: PDCategory.self)) throws -> [PDCategory] {
+                                    jsonFileName: String = "categories",
+                                    bundle: Bundle = Bundle(for: PDCategory.self)) throws -> [PDCategory] {
         guard let url = bundle.url(forResource: jsonFileName, withExtension: "json"),
             let data = try? Data(contentsOf: url),
             let categories = try? decoder.decode([PDCategory].self, from: data) else {
@@ -78,13 +82,20 @@ public final class PDCategory: Decodable {
      */
     public func movies(page: Int,
                        session: URLSession = URLSession.shared,
-                       completionQueue: DispatchQueue = DispatchQueue.main,
+                       completionQueue: OperationQueue = OperationQueue.main,
                        completion: @escaping ([PDMovie]?, Error?) -> Void) {
         let endPoint = ArchiveEndPoint.movies(category: self, page: page)
         session.decodableRequest(with: endPoint) { (response: PDMovieResponse?, error) in
-            completionQueue.async {
+            completionQueue.addOperation {
                 completion(response?.docs, error)
             }
         }
+    }
+}
+
+extension PDCategory: Equatable {
+    /// Two categories are equal if their names are equal
+    public static func == (lhs: PDCategory, rhs: PDCategory) -> Bool {
+        return lhs.name == rhs.name
     }
 }

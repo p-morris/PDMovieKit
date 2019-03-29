@@ -22,6 +22,7 @@
 		7218A7F8224D1A17002C1FEB /* URLSession+Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218A7F7224D1A17002C1FEB /* URLSession+Decoding.swift */; };
 		7236CA66224C055800CDEDBD /* PDMovieKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7236CA5C224C055800CDEDBD /* PDMovieKit.framework */; };
 		7236CA6D224C055800CDEDBD /* PDMovieKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7236CA5F224C055800CDEDBD /* PDMovieKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72820772224E2C9600955C63 /* PDCategoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72820771224E2C9600955C63 /* PDCategoryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		7236CA60224C055800CDEDBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7236CA65224C055800CDEDBD /* PDMovieKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PDMovieKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7236CA6C224C055800CDEDBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72820771224E2C9600955C63 /* PDCategoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDCategoryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				72156593224D3603008AD19C /* CategoriesTests.swift */,
 				72156595224D3890008AD19C /* URLSession+DecodingTests.swift */,
 				721565A0224D3FB8008AD19C /* EndPointTests.swift */,
+				72820771224E2C9600955C63 /* PDCategoryTests.swift */,
 				7236CA6C224C055800CDEDBD /* Info.plist */,
 			);
 			path = PDMovieKitTests;
@@ -287,6 +290,7 @@
 				72156596224D3890008AD19C /* URLSession+DecodingTests.swift in Sources */,
 				72156599224D3966008AD19C /* MockEndPoint.swift in Sources */,
 				7215659D224D3A78008AD19C /* MockURLSession.swift in Sources */,
+				72820772224E2C9600955C63 /* PDCategoryTests.swift in Sources */,
 				7215659B224D39D1008AD19C /* MockDecodable.swift in Sources */,
 				721565A1224D3FB8008AD19C /* EndPointTests.swift in Sources */,
 			);
