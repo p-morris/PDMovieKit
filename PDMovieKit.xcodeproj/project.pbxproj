@@ -24,7 +24,6 @@
 		72820905224E548300955C63 /* MockDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72820901224E548300955C63 /* MockDecodable.swift */; };
 		72820906224E548300955C63 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72820902224E548300955C63 /* MockURLSession.swift */; };
 		72820907224E548300955C63 /* MockEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72820903224E548300955C63 /* MockEndPoint.swift */; };
-		728209A4224E598600955C63 /* PDMovieKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 728209A3224E598600955C63 /* PDMovieKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		728209B7224E5AC800955C63 /* PDMovieKit_tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 728209B5224E5AC800955C63 /* PDMovieKit_tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		728209BB224E5AD300955C63 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 728208E3224E545E00955C63 /* categories.json */; };
 		728209BC224E5AD300955C63 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728208E5224E545E00955C63 /* EndPoint.swift */; };
@@ -32,6 +31,7 @@
 		728209BE224E5AD300955C63 /* PDMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728208E6224E545E00955C63 /* PDMovie.swift */; };
 		728209BF224E5AD300955C63 /* PDMovieMetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728208E7224E545E00955C63 /* PDMovieMetaData.swift */; };
 		728209C0224E5AD300955C63 /* URLSession+Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728208E4224E545E00955C63 /* URLSession+Decoding.swift */; };
+		728209F0224E5F4500955C63 /* PDMovieKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 728209EF224E5F4500955C63 /* PDMovieKit.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,10 +66,10 @@
 		72820901224E548300955C63 /* MockDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDecodable.swift; sourceTree = "<group>"; };
 		72820902224E548300955C63 /* MockURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		72820903224E548300955C63 /* MockEndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockEndPoint.swift; sourceTree = "<group>"; };
-		728209A3224E598600955C63 /* PDMovieKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDMovieKit.h; path = ../../../Desktop/PDMovieKit/PDMovieKit/PDMovieKit.h; sourceTree = "<group>"; };
 		728209B3224E5AC800955C63 /* PDMovieKit_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PDMovieKit_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		728209B5224E5AC800955C63 /* PDMovieKit_tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDMovieKit_tvOS.h; sourceTree = "<group>"; };
 		728209B6224E5AC800955C63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		728209EF224E5F4500955C63 /* PDMovieKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDMovieKit.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +128,7 @@
 				728208E6224E545E00955C63 /* PDMovie.swift */,
 				728208E7224E545E00955C63 /* PDMovieMetaData.swift */,
 				728208E4224E545E00955C63 /* URLSession+Decoding.swift */,
-				728209A3224E598600955C63 /* PDMovieKit.h */,
+				728209EF224E5F4500955C63 /* PDMovieKit.h */,
 				728208CC224E544200955C63 /* Info.plist */,
 			);
 			path = PDMovieKit;
@@ -192,7 +192,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				728209A4224E598600955C63 /* PDMovieKit.h in Headers */,
+				728209F0224E5F4500955C63 /* PDMovieKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
