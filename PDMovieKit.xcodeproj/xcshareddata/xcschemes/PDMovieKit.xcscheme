@@ -20,6 +20,20 @@
                ReferencedContainer = "container:PDMovieKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "728209B2224E5AC800955C63"
+               BuildableName = "PDMovieKit_tvOS.framework"
+               BlueprintName = "PDMovieKit_tvOS"
+               ReferencedContainer = "container:PDMovieKit.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
