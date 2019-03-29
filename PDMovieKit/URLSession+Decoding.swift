@@ -19,14 +19,16 @@ extension URLSession {
             userInfo: [NSLocalizedDescriptionKey: "Invalid URL."]
         )
     }
-    /// Makes a data request to the `URL` specified by a given `EndPoint`, and then
-    /// attempts to parse the response body for JSON data which can be decoded to a `Decodable` type.
-    /// - Parameters:
-    /// - endPoint: The `EndPoint` representing the request URL.
-    /// - decoder: The `JSONDecoder` to use for decoding the response body into a `Decodable` object.
-    /// - completion: The block of code to execute on completion of the request/decoding operation. Includes
-    /// the object that was decoded (or `nil` if an error occured), and an `Error` if one occured.
-    /// - warning: Both the request and completion will be executed on a background queue.
+    /**
+     Makes a data request to the `URL` specified by a given `EndPoint`, and then
+     attempts to parse the response body for JSON data which can be decoded to a `Decodable` type.
+     - Parameters:
+          - endPoint: The `EndPoint` representing the request URL.
+          - decoder: The `JSONDecoder` to use for decoding the response body into a `Decodable` object.
+          - completion: The block of code to execute on completion of the request/decoding operation. Includes
+                        the object that was decoded (or `nil` if an error occured), and an `Error` if one occured.
+      - warning: Both the request and completion will be executed on a background queue.
+     */
     func decodableRequest<T>(with endPoint: EndPoint,
                              decoder: JSONDecoder = JSONDecoder(),
                              completion: @escaping (T?, Error?) -> Void) where T: Decodable {
