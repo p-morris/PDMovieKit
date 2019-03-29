@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "728208C7224E544200955C63"
-               BuildableName = "PDMovieKit.framework"
-               BlueprintName = "PDMovieKit"
+               BlueprintIdentifier = "728209B2224E5AC800955C63"
+               BuildableName = "PDMovieKit_tvOS.framework"
+               BlueprintName = "PDMovieKit_tvOS"
                ReferencedContainer = "container:PDMovieKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,29 +26,9 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      codeCoverageEnabled = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "728208D0224E544200955C63"
-               BuildableName = "PDMovieKitTests.xctest"
-               BlueprintName = "PDMovieKitTests"
-               ReferencedContainer = "container:PDMovieKit.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "728208C7224E544200955C63"
-            BuildableName = "PDMovieKit.framework"
-            BlueprintName = "PDMovieKit"
-            ReferencedContainer = "container:PDMovieKit.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -65,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "728208C7224E544200955C63"
-            BuildableName = "PDMovieKit.framework"
-            BlueprintName = "PDMovieKit"
+            BlueprintIdentifier = "728209B2224E5AC800955C63"
+            BuildableName = "PDMovieKit_tvOS.framework"
+            BlueprintName = "PDMovieKit_tvOS"
             ReferencedContainer = "container:PDMovieKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -83,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "728208C7224E544200955C63"
-            BuildableName = "PDMovieKit.framework"
-            BlueprintName = "PDMovieKit"
+            BlueprintIdentifier = "728209B2224E5AC800955C63"
+            BuildableName = "PDMovieKit_tvOS.framework"
+            BlueprintName = "PDMovieKit_tvOS"
             ReferencedContainer = "container:PDMovieKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
