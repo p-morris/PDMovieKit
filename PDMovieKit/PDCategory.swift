@@ -25,7 +25,7 @@ public final class PDCategory: Decodable {
         case name, thumbnailURL, tags
     }
     /// Errors associated with inflating categories from the disk
-    enum Errors {
+    internal enum Errors {
         /// The domain for PDCategory errors
         static var domain = "PDCategoryErrorDomain"
         /// Represents an error loading the categopries JSON file from disk

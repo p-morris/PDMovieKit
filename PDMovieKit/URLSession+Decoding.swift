@@ -10,7 +10,7 @@ import Foundation
 
 /// Adds generic functionality to URLSession for performing a data task
 /// and parsing the response body for JSON decodable objects.
-extension URLSession {
+internal extension URLSession {
     /// Contains errors to be thrown when encountering errors parsing responses
     enum Errors {
         static var invalidURL = NSError(

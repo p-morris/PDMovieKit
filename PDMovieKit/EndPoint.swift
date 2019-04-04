@@ -8,13 +8,13 @@
 
 import Foundation
 
-protocol EndPoint {
+internal protocol EndPoint {
     var url: URL? { get }
 }
 
 /// Defines the API endpoints for listing movies and retrieving movie
 /// metadata from the Archive.org database.
-enum ArchiveEndPoint: EndPoint {
+internal enum ArchiveEndPoint: EndPoint {
     /**
      Used to retrieve a list a all the movies for a given category and page.
      - Parameters:
