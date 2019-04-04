@@ -15,6 +15,7 @@
     - [2) List movie categories](#2-list-movie-categories)
     - [3) List movies within a category](#3-list-movies-within-a-category)
     - [4) Get the metadata for a movie](#4-get-the-metadata-for-a-movie)
+  - [Issues and Requests](#issues-and-requests)
 
 ## Introduction
 
@@ -120,15 +121,36 @@ horrorCategory.movies(page: 1, session: URLSession.shared, completionQueue: Oper
 
 Important! The request will be made, and the `completion` closure executed on a background queue. You can specify the queue that you'd like your `completion` closure to be executed on by passing in an `OperationQueue` object for the `completionQueue` argument.
 
-A `PDMovie` object is a simple data structure comprising of `title`, `description`, `rating` and `watchURL` properties.
+A `PDMovie` object is a simple data structure comprising of `title`, `description`, `rating`, `thumbnailURL` and `watchURL` properties.
 
-The `title` is a `String` representing the title of the movie.
-
-The `description` is a `String` representing the description of the movie.
-
-The `rating` is a `Double` representing the review rating of the movie, between 0.0 and 5.0.
-
-The `watchURL` is the URL which can be used to play the movie in `h.264` format.
+- The `title` is a `String` representing the title of the movie.
+- The `description` is a `String` representing the description of the movie.
+- The `rating` is a `Double` representing the review rating of the movie, between 0.0 and 5.0.
+- The `thumbnailURL` is a remote `URL` at which a thumbnail image for the movie can be found.
+- The `watchURL` is the URL which can be used to play the movie in `h.264` format.
 
 ### 4) Get the metadata for a movie
 
+Each `PDMovie` has an associated `PDMovieMetaData` object associated with it, which provides a set of optional properties describing the movie further.
+
+To retrieve the `PDMovieMetaData` object for a particular movie, use the `metaData(session:completionQueue:completion:)` method of any `PDMovie` object:
+
+```
+nightOfTheLivingDead.metaData(session: URLSession.shared, completionQueue: OperationQueue.main, completion: { (metaData, error) in
+  if let metaData = metaData {
+      // Show metadata to the user
+  }
+})
+```
+
+A `PDMovieMetaData` is another simple data structure, comprising of `description`, `credits`, `directorName`, `runTime`, and `thumbnailURL` properties.
+
+- The `description` property is a `String` representing the description of the movie.
+- The `credits` property is an optional `String?` representing the movie credits.
+- The `directorName` is an optional `String?` representing the director of the movie.
+- The `runTime` is an optional `String?` representing the amount of the time the movie lasts.
+- The `thumbnailURL` is an remote `URL` at which a thumbnail image for the movie may be found.
+
+## Issues and Requests
+
+If you come across any bugs, or there is a particular feature that you'd like to see support for, then please file a Github issue and I'll get back to you.
