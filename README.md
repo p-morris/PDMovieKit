@@ -11,7 +11,9 @@
     - [Carthage](#carthage)
     - [CocoaPods](#cocoapods)
   - [Getting Started](#getting-started)
-    - [1) Import `PDMovieKit` or `PDMovieKit_tvOS`:](#1-import-pdmoviekit-or-pdmoviekittvos)
+    - [1) Import PDMovieKit](#1-import-pdmoviekit)
+    - [Carthage](#carthage-1)
+    - [CocoaPods](#cocoapods-1)
     - [2) List movie categories](#2-list-movie-categories)
     - [3) List movies within a category](#3-list-movies-within-a-category)
     - [4) Get the metadata for a movie](#4-get-the-metadata-for-a-movie)
@@ -77,9 +79,11 @@ pod install
 
 ## Getting Started
 
-### 1) Import `PDMovieKit` or `PDMovieKit_tvOS`:
+### 1) Import PDMovieKit
 
-If you're using PDMovieKit in an iOS project, use the following `import`:
+### Carthage
+
+For Carthage users, if you're using PDMovieKit in an iOS project, use the following `import`:
 
 ```
 import PDMovieKit
@@ -87,7 +91,17 @@ import PDMovieKit
 
 For tvOS, use:
 
+```
 import PDMovieKit_tvOS
+```
+
+### CocoaPods
+
+CocoaPods users can use the follow `import` for both iOS *and* tvOS:
+
+```
+import PDMovieKit
+```
 
 ### 2) List movie categories
 

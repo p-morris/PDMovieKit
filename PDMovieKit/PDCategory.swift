@@ -40,9 +40,9 @@ public final class PDCategory: Decodable {
      - Parameter completion: The code block to be executed on completion of the request. Includes parameters
      for the array of categories (if retrieved successfully), or an error if one occured.
      */
-    public static func allCategories(completion: ([PDCategory]?, Error?) -> Void) {
+    public static func allCategories(with data: Data? = nil, completion: ([PDCategory]?, Error?) -> Void) {
         do {
-            let categories = try self.categories()
+            let categories = try self.categories(with: data)
             completion(categories, nil)
         } catch {
             completion(nil, error)
@@ -57,15 +57,19 @@ public final class PDCategory: Decodable {
      - Returns: An array of `PDCategory` objects.
      - Throws: `PDCategory.Errors.categoryJSONFileMissing` if `jsonFileName` can't be loaded from disk.
      */
-    internal static func categories(decoder: JSONDecoder = JSONDecoder(),
+    internal static func categories(with data: Data?,
+                                    decoder: JSONDecoder = JSONDecoder(),
                                     jsonFileName: String = "categories",
                                     bundle: Bundle = Bundle(for: PDCategory.self)) throws -> [PDCategory] {
-        guard let url = bundle.url(forResource: jsonFileName, withExtension: "json"),
+        if let data = data,
+            let categories = try? decoder.decode([PDCategory].self, from: data) {
+            return categories
+        } else if let url = bundle.url(forResource: jsonFileName, withExtension: "json"),
             let data = try? Data(contentsOf: url),
-            let categories = try? decoder.decode([PDCategory].self, from: data) else {
-            throw Errors.categoryJSONFileMissing
+            let categories = try? decoder.decode([PDCategory].self, from: data) {
+            return categories
         }
-        return categories
+        throw Errors.categoryJSONFileMissing
     }
     /**
      Fetches an array of movies associated with this category.

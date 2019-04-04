@@ -28,7 +28,7 @@ class PDCategoryTests: XCTestCase {
     
     func test_category_json_file_missing_error_thrown_for_invalid_file() {
         do {
-            let _ = try PDCategory.categories(decoder: JSONDecoder(), jsonFileName: "fake")
+            let _ = try PDCategory.categories(with: nil, decoder: JSONDecoder(), jsonFileName: "fake")
         } catch {
             XCTAssertEqual(error as NSError, PDCategory.Errors.categoryJSONFileMissing)
         }
@@ -36,7 +36,14 @@ class PDCategoryTests: XCTestCase {
     
     func test_categories_decoded_successfully() {
         let exp = expectation(description: "categories")
-        PDCategory.allCategories { (categories, error) in
+        let fakeData = """
+        [{
+            "name": "Silent",
+            "thumbnailURL": "",
+            "tags": ["silent film", "Silent", "Silent Film", "silents", "silent", "Silents", "Silent Movie"]
+        }]
+        """.data(using: .utf8)!
+        PDCategory.allCategories(with: fakeData) { (categories, error) in
             XCTAssert(categories != nil && error == nil)
             exp.fulfill()
         }
