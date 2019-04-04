@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'PDMovieKit'
-  spec.version = '1.0.1'
+  spec.version = '1.0.2'
   spec.summary = 'A simple iOS and tvOS library that provides access to hundreds of free public domain movies.'
   spec.homepage = 'https://github.com/p-morris/PDMovieKit'
   spec.license = { type: 'MIT', file: 'LICENSE' }
