@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		72446BFC22568DF70091842B /* PDLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72446BFB22568DF70091842B /* PDLibrary.swift */; };
 		728208D2224E544200955C63 /* PDMovieKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 728208C8224E544200955C63 /* PDMovieKit.framework */; };
 		728208EA224E545E00955C63 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 728208E3224E545E00955C63 /* categories.json */; };
 		728208EB224E545E00955C63 /* URLSession+Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728208E4224E545E00955C63 /* URLSession+Decoding.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		72446BFB22568DF70091842B /* PDLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDLibrary.swift; sourceTree = "<group>"; };
 		728208C8224E544200955C63 /* PDMovieKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PDMovieKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		728208CC224E544200955C63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		728208D1224E544200955C63 /* PDMovieKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PDMovieKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,11 +125,12 @@
 			isa = PBXGroup;
 			children = (
 				728208E3224E545E00955C63 /* categories.json */,
+				728208E4224E545E00955C63 /* URLSession+Decoding.swift */,
 				728208E5224E545E00955C63 /* EndPoint.swift */,
 				728208E8224E545E00955C63 /* PDCategory.swift */,
 				728208E6224E545E00955C63 /* PDMovie.swift */,
 				728208E7224E545E00955C63 /* PDMovieMetaData.swift */,
-				728208E4224E545E00955C63 /* URLSession+Decoding.swift */,
+				72446BFB22568DF70091842B /* PDLibrary.swift */,
 				728209EF224E5F4500955C63 /* PDMovieKit.h */,
 				728208CC224E544200955C63 /* Info.plist */,
 			);
@@ -359,6 +362,7 @@
 				728208EC224E545E00955C63 /* EndPoint.swift in Sources */,
 				728208EE224E545E00955C63 /* PDMovieMetaData.swift in Sources */,
 				728208ED224E545E00955C63 /* PDMovie.swift in Sources */,
+				72446BFC22568DF70091842B /* PDLibrary.swift in Sources */,
 				728208EF224E545E00955C63 /* PDCategory.swift in Sources */,
 				728208EB224E545E00955C63 /* URLSession+Decoding.swift in Sources */,
 			);

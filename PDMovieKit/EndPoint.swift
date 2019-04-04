@@ -16,15 +16,22 @@ internal protocol EndPoint {
 /// metadata from the Archive.org database.
 internal enum ArchiveEndPoint: EndPoint {
     /**
+     Used to retrieve a list a the most recently added movies.
+     - note: maximum movies in response is 50
+     */
+    case recentlyAdded
+    /**
      Used to retrieve a list a all the movies for a given category and page.
      - Parameters:
         - category: The category to which the retrieved movies should belong
         - page: The page of results required.
      */
     case movies(category: PDCategory, page: Int)
-    /// Used to retrieve the metadata for a given movie.
-    /// - Parameters:
-    ///     - movie: The movie that you wish to retrive metadata for.
+    /**
+     Used to retrieve the metadata for a given movie.
+     - Parameters:
+     - movie: The movie that you wish to retrive metadata for.
+    */
     case metaData(movie: PDMovie)
     /// The url for the specified request.
     var url: URL? {
@@ -53,6 +60,20 @@ internal enum ArchiveEndPoint: EndPoint {
         /// A URL for metadata for the metadata of a single movie.
         case let .metaData(movie):
             return URL(string: "https://archive.org/metadata/\(movie.identifier)")
+        case .recentlyAdded:
+            return URL(string: """
+                https://archive.org/advancedsearch.php?\
+                q=collection:(feature_films)\
+                AND mediatype:(movies)\
+                &fl[]=identifier\
+                &fl[]=avg_rating\
+                &fl[]=description\
+                &fl[]=title\
+                &sort[]=addeddate+desc&sort[]=&sort[]=\
+                &rows=50\
+                &output=json\
+                &page=1
+                """.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? "")
         }
     }
 }
