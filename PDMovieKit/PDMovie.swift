@@ -20,6 +20,10 @@ public struct PDMovie: Decodable {
     public let description: String
     /// The average rating of the movie. A value from 0.0 to 5.0.
     public let rating: Double
+    /// The URL where a thumbnail image for the movie may be retrieved.
+    public var thumbnailURL: URL? {
+        return URL(string: "https://archive.org/download/\(identifier)/__ia_thumb.jpg")
+    }
     /// The URL which can be used to stream the movie.
     public var watchURL: URL? {
         return URL(string: "https://archive.org/download/\(identifier)/format=h.264")
