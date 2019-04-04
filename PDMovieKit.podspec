@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'PDMovieKit'
-  spec.version = '1.0.2'
+  spec.version = '1.0.3'
   spec.summary = 'A simple iOS and tvOS library that provides access to hundreds of free public domain movies.'
   spec.homepage = 'https://github.com/p-morris/PDMovieKit'
   spec.license = { type: 'MIT', file: 'LICENSE' }
@@ -11,10 +11,10 @@ Pod::Spec.new do |spec|
   spec.tvos.deployment_target = '10.0'
   spec.requires_arc = true
   spec.source = { git: 'https://github.com/p-morris/PDMovieKit.git', tag: "#{spec.version}", submodules: true }
-  spec.source_files = 'PDMovieKit/*.swift', 'PDMovieKit/*.json'
+  spec.source_files = 'PDMovieKit/*.swift'
+  spec.resource = 'PDMovieKit/categories.json'
   spec.test_spec do |test_spec|
     test_spec.requires_app_host = false
     test_spec.source_files = 'PDMovieKitTests/**/*.swift'
-    test_spec.exclude_files = 'PDMovieKitTests/Tests/CategoriesTests.swift'
   end
 end
