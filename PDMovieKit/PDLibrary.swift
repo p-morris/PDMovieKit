@@ -9,12 +9,29 @@
 
 import Foundation
 
+protocol PDCategoryProtocol {
+    static func allCategories(completion: ([PDCategory]?, Error?) -> Void)
+}
+extension PDCategory: PDCategoryProtocol { }
+
+protocol DecodableSession {
+    func decodableRequest<T>(with endPoint: EndPoint, decoder: JSONDecoder, completion: @escaping (T?, Error?) -> Void) where T: Decodable
+}
+extension URLSession: DecodableSession { }
+
+/// Used to represent featured PDMovie content, and categories.
 public struct PDLibrary {
+    /// The latest 5 PDMovies
     public let featured: [PDMovie]
+    /// The top rated 50 movies
     public let topRated: [PDMovie]
+    /// The 50 most downloaded movies
     public let mostWatched: [PDMovie]
+    /// The 50 most recently added movies
     public let recentlyAdded: [PDMovie]
+    /// All movie categories
     public let categories: [PDCategory]
+    /// Represents errors related to loading the PDLibrary data
     internal enum Errors {
         static let loading = NSError(
             domain: "PDLibraryErrorDomain",
@@ -22,17 +39,21 @@ public struct PDLibrary {
             userInfo: [NSLocalizedDescriptionKey: "Failed to load library."]
         )
     }
-    public static func library(session: URLSession = URLSession.shared,
-                               completionQueue: OperationQueue = OperationQueue.main,
-                               completion: @escaping (PDLibrary?, Error?) -> Void) {
+    public static func library(session: URLSession, completionQueue: OperationQueue, completion: @escaping (PDLibrary?, Error?) -> Void) {
+        self.library(categoryType: PDCategory.self, session: session, completionQueue: completionQueue, completion: completion)
+    }
+    internal static func library(categoryType: PDCategoryProtocol.Type,
+                                 session: DecodableSession = URLSession.shared,
+                                 completionQueue: OperationQueue = OperationQueue.main,
+                                 completion: @escaping (PDLibrary?, Error?) -> Void) {
         // Categories request
-        PDCategory.allCategories { (categories, categoriesError) in
+        categoryType.allCategories { (categories, categoriesError) in
             // Recently added request
-            session.decodableRequest(with: ArchiveEndPoint.recentlyAdded) { (recent: PDMovieResponse?, addedError) in
+            session.decodableRequest(with: ArchiveEndPoint.recentlyAdded, decoder: JSONDecoder()) { (recent: PDMovieResponse?, addedError) in
                 // Most watched request
-                session.decodableRequest(with: ArchiveEndPoint.mostWatched) { (popular: PDMovieResponse?, popularError) in
+                session.decodableRequest(with: ArchiveEndPoint.mostWatched, decoder: JSONDecoder()) { (popular: PDMovieResponse?, popularError) in
                     // Top rated request
-                    session.decodableRequest(with: ArchiveEndPoint.topRated) { (topRated: PDMovieResponse?, topError) in
+                    session.decodableRequest(with: ArchiveEndPoint.topRated, decoder: JSONDecoder()) { (topRated: PDMovieResponse?, topError) in
                         completionQueue.addOperation {
                             // If we have all data, initialize library object
                             if let categories = categories, let recent = recent, let popular = popular, let topRated = topRated {
