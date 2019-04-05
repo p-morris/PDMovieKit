@@ -32,7 +32,7 @@ internal extension URLSession {
     func decodableRequest<T>(with endPoint: EndPoint,
                              decoder: JSONDecoder = JSONDecoder(),
                              completion: @escaping (T?, Error?) -> Void) where T: Decodable {
-        guard let url = endPoint.url else { completion(nil, Errors.invalidURL); return }
+        guard let url = endPoint.url else { completion(nil, Errors.invalidURL); return; }
         dataTask(with: url) { (data, response, error) in
             do {
                 guard let data = data else {

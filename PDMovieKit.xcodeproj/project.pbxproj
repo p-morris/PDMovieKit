@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		72446BFC22568DF70091842B /* PDLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72446BFB22568DF70091842B /* PDLibrary.swift */; };
+		72446C022257758B0091842B /* URLBuilding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72446C012257758B0091842B /* URLBuilding.swift */; };
+		72446C0422577B7A0091842B /* URLBuildingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72446C0322577B7A0091842B /* URLBuildingTests.swift */; };
+		72446C06225783A10091842B /* PDLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72446C05225783A10091842B /* PDLibraryTests.swift */; };
 		728208D2224E544200955C63 /* PDMovieKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 728208C8224E544200955C63 /* PDMovieKit.framework */; };
 		728208EA224E545E00955C63 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 728208E3224E545E00955C63 /* categories.json */; };
 		728208EB224E545E00955C63 /* URLSession+Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728208E4224E545E00955C63 /* URLSession+Decoding.swift */; };
@@ -47,6 +50,9 @@
 
 /* Begin PBXFileReference section */
 		72446BFB22568DF70091842B /* PDLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDLibrary.swift; sourceTree = "<group>"; };
+		72446C012257758B0091842B /* URLBuilding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLBuilding.swift; sourceTree = "<group>"; };
+		72446C0322577B7A0091842B /* URLBuildingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuildingTests.swift; sourceTree = "<group>"; };
+		72446C05225783A10091842B /* PDLibraryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDLibraryTests.swift; sourceTree = "<group>"; };
 		728208C8224E544200955C63 /* PDMovieKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PDMovieKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		728208CC224E544200955C63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		728208D1224E544200955C63 /* PDMovieKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PDMovieKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +132,7 @@
 			children = (
 				728208E3224E545E00955C63 /* categories.json */,
 				728208E4224E545E00955C63 /* URLSession+Decoding.swift */,
+				72446C012257758B0091842B /* URLBuilding.swift */,
 				728208E5224E545E00955C63 /* EndPoint.swift */,
 				728208E8224E545E00955C63 /* PDCategory.swift */,
 				728208E6224E545E00955C63 /* PDMovie.swift */,
@@ -167,6 +174,8 @@
 				728208F6224E547A00955C63 /* PDMovieMetaDataTests.swift */,
 				728208F3224E547A00955C63 /* PDMovieTests.swift */,
 				728208F4224E547A00955C63 /* URLSession+DecodingTests.swift */,
+				72446C0322577B7A0091842B /* URLBuildingTests.swift */,
+				72446C05225783A10091842B /* PDLibraryTests.swift */,
 				728208F2224E547900955C63 /* PDMovieKitTests-Bridging-Header.h */,
 			);
 			path = Tests;
@@ -363,6 +372,7 @@
 				728208EE224E545E00955C63 /* PDMovieMetaData.swift in Sources */,
 				728208ED224E545E00955C63 /* PDMovie.swift in Sources */,
 				72446BFC22568DF70091842B /* PDLibrary.swift in Sources */,
+				72446C022257758B0091842B /* URLBuilding.swift in Sources */,
 				728208EF224E545E00955C63 /* PDCategory.swift in Sources */,
 				728208EB224E545E00955C63 /* URLSession+Decoding.swift in Sources */,
 			);
@@ -377,11 +387,13 @@
 				72820907224E548300955C63 /* MockEndPoint.swift in Sources */,
 				728208FF224E547A00955C63 /* EndPointTests.swift in Sources */,
 				72820905224E548300955C63 /* MockDecodable.swift in Sources */,
+				72446C0422577B7A0091842B /* URLBuildingTests.swift in Sources */,
 				728208FE224E547A00955C63 /* PDCategoryTests.swift in Sources */,
 				72820904224E548300955C63 /* MockDecoder.swift in Sources */,
 				72820906224E548300955C63 /* MockURLSession.swift in Sources */,
 				728208FB224E547A00955C63 /* URLSession+DecodingTests.swift in Sources */,
 				728208FC224E547A00955C63 /* CategoriesTests.swift in Sources */,
+				72446C06225783A10091842B /* PDLibraryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

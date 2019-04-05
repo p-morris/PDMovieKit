@@ -5,6 +5,7 @@
 //  Created by Peter Morris on 28/03/2019.
 //  Copyright © 2019 Pete Morris. All rights reserved.
 //
+// swiftlint:disable line_length
 
 import Foundation
 
@@ -15,6 +16,16 @@ internal protocol EndPoint {
 /// Defines the API endpoints for listing movies and retrieving movie
 /// metadata from the Archive.org database.
 internal enum ArchiveEndPoint: EndPoint {
+    /**
+     Used to retrieve a list a the most watched movies.
+     - note: maximum movies in response is 50
+     */
+    case topRated
+    /**
+     Used to retrieve a list a the most watched movies.
+     - note: maximum movies in response is 50
+     */
+    case mostWatched
     /**
      Used to retrieve a list a the most recently added movies.
      - note: maximum movies in response is 50
@@ -30,7 +41,7 @@ internal enum ArchiveEndPoint: EndPoint {
     /**
      Used to retrieve the metadata for a given movie.
      - Parameters:
-     - movie: The movie that you wish to retrive metadata for.
+        - movie: The movie that you wish to retrive metadata for.
     */
     case metaData(movie: PDMovie)
     /// The url for the specified request.
@@ -41,39 +52,15 @@ internal enum ArchiveEndPoint: EndPoint {
         /// Also specifies that all returned movies should exist within the `feature_films`
         /// collection, and have a mediatype of `movies`. Each movie object, will specify the
         /// identifier, average rating, description, and tile of the movie.
-        case let .movies(category, page):
-            let subjects = category.tags.joined(separator: " OR ")
-            return URL(string: """
-                https://archive.org/advancedsearch.php?\
-                q=collection:(feature_films) AND \
-                subject:(\(subjects)) \
-                AND mediatype:(movies)\
-                &fl[]=identifier\
-                &fl[]=avg_rating\
-                &fl[]=description\
-                &fl[]=title\
-                &sort[]=downloads desc&sort[]=&sort[]=\
-                &rows=50\
-                &output=json\
-                &page=\(page)
-                """.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? "")
+        case let .movies(category, page): return URL(with: [.featureFilms, .movieMediaType, .includeSubjects(subjects: category.tags)], page: page)
         /// A URL for metadata for the metadata of a single movie.
-        case let .metaData(movie):
-            return URL(string: "https://archive.org/metadata/\(movie.identifier)")
-        case .recentlyAdded:
-            return URL(string: """
-                https://archive.org/advancedsearch.php?\
-                q=collection:(feature_films)\
-                AND mediatype:(movies)\
-                &fl[]=identifier\
-                &fl[]=avg_rating\
-                &fl[]=description\
-                &fl[]=title\
-                &sort[]=addeddate+desc&sort[]=&sort[]=\
-                &rows=50\
-                &output=json\
-                &page=1
-                """.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) ?? "")
+        case let .metaData(movie): return URL(string: "https://archive.org/metadata/\(movie.identifier)")
+        /// A URL for retrieving a list of recently added movies. Maximum movies in response is 50.
+        case .recentlyAdded: return URL(with: [.featureFilms, .movieMediaType], sortedBy: .addedDate)
+        /// A URL for retrieving a list of the most downloaded movies. Maximum movies in response is 50.
+        case .mostWatched: return URL(with: [.featureFilms, .movieMediaType])
+        /// A URL for retrieving a list of the highest rated movies. Maximum movies in response is 50.
+        case .topRated: return URL(with: [.featureFilms, .movieMediaType], sortedBy: .averageRating)
         }
     }
 }

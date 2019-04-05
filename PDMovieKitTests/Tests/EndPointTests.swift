@@ -58,7 +58,22 @@ class EndPointTests: XCTestCase {
     
     func test_movies_url() {
         let endPoint = ArchiveEndPoint.movies(category: category, page: 2)
-        XCTAssertEqual(endPoint.url!.description, "https://archive.org/advancedsearch.php?q=collection:(feature_films)%20AND%20subject:(Drama%20OR%20drama%20OR%20dramas)%20AND%20mediatype:(movies)&fl%5B%5D=identifier&fl%5B%5D=avg_rating&fl%5B%5D=description&fl%5B%5D=title&sort%5B%5D=downloads%20desc&sort%5B%5D=&sort%5B%5D=&rows=50&output=json&page=2")
+        XCTAssertEqual(endPoint.url!.description, "https://archive.org/advancedsearch.php?q=collection:(feature_films)%20AND%20mediatype:(movies)%20AND%20subject:(Drama%20OR%20drama%20OR%20dramas)&fl%5B%5D=identifier&fl%5B%5D=avg_rating&fl%5B%5D=description&fl%5B%5D=title&rows=50&output=json&page=2&sort%5B%5D=downloads%20desc&sort%5B%5D=&sort%5B%5D=")
+    }
+    
+    func test_recently_added_url() {
+        let endPoint = ArchiveEndPoint.recentlyAdded
+        XCTAssertEqual(endPoint.url!.description, "https://archive.org/advancedsearch.php?q=collection:(feature_films)%20AND%20mediatype:(movies)&fl%5B%5D=identifier&fl%5B%5D=avg_rating&fl%5B%5D=description&fl%5B%5D=title&rows=50&output=json&page=1&sort%5B%5D=addeddate%20desc&sort%5B%5D=&sort%5B%5D=")
+    }
+    
+    func test_most_watched_url() {
+        let endPoint = ArchiveEndPoint.mostWatched
+        XCTAssertEqual(endPoint.url!.description, "https://archive.org/advancedsearch.php?q=collection:(feature_films)%20AND%20mediatype:(movies)&fl%5B%5D=identifier&fl%5B%5D=avg_rating&fl%5B%5D=description&fl%5B%5D=title&rows=50&output=json&page=1&sort%5B%5D=downloads%20desc&sort%5B%5D=&sort%5B%5D=")
+    }
+    
+    func test_top_rated_url() {
+        let endPoint = ArchiveEndPoint.topRated
+        XCTAssertEqual(endPoint.url!.description, "https://archive.org/advancedsearch.php?q=collection:(feature_films)%20AND%20mediatype:(movies)&fl%5B%5D=identifier&fl%5B%5D=avg_rating&fl%5B%5D=description&fl%5B%5D=title&rows=50&output=json&page=1&sort%5B%5D=avg_rating%20desc&sort%5B%5D=&sort%5B%5D=")
     }
     
 }
