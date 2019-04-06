@@ -9,14 +9,17 @@
 
 import Foundation
 
+/// Provides an abstraction to PDCategory
 protocol PDCategoryProtocol {
     static func allCategories(completion: ([PDCategory]?, Error?) -> Void)
 }
+/// Add conformity to PDCategory
 extension PDCategory: PDCategoryProtocol { }
-
+/// Provides and abstraction to app specific URLSession extensions
 protocol DecodableSession {
     func decodableRequest<T>(with endPoint: EndPoint, decoder: JSONDecoder, completion: @escaping (T?, Error?) -> Void) where T: Decodable
 }
+/// Add confirmity to URLSession
 extension URLSession: DecodableSession { }
 
 /// Used to represent featured PDMovie content, and categories.
@@ -39,9 +42,26 @@ public struct PDLibrary {
             userInfo: [NSLocalizedDescriptionKey: "Failed to load library."]
         )
     }
+    /**
+     Retrieves a PDLibrary object populated with data.
+     - Parameters:
+        - session: The `URLSession` to use for the request.
+        - completionQueue: The `OperationQueue` on which to execute `completion`.
+        - completion: The code block to be executed asynchronously on `completionQueue` once the request is complete.
+     Includes parameter for the returned `PDLibrary` (if retrieved successfully), or an error if not.
+     */
     public static func library(session: URLSession, completionQueue: OperationQueue, completion: @escaping (PDLibrary?, Error?) -> Void) {
         self.library(categoryType: PDCategory.self, session: session, completionQueue: completionQueue, completion: completion)
     }
+    /**
+     Retrieves a PDLibrary object populated with data.
+     - Parameters:
+     - categoryType: A class which conforms to `PDCategoryProtocol`. Will be used to retrieve an array of `PDCategory` objects.
+     - session: The `DecodableSession` to use for the request.
+     - completionQueue: The `OperationQueue` on which to execute `completion`.
+     - completion: The code block to be executed asynchronously on `completionQueue` once the request is complete.
+     Includes parameter for the returned `PDLibrary` (if retrieved successfully), or an error if not.
+     */
     internal static func library(categoryType: PDCategoryProtocol.Type,
                                  session: DecodableSession = URLSession.shared,
                                  completionQueue: OperationQueue = OperationQueue.main,

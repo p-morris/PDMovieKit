@@ -12,6 +12,10 @@ import XCTest
 class PDLibraryTests: XCTestCase {
     
     var session: MockDecodableSession!
+    var recentlyAdded: PDMovieResponse!
+    var mostWatched: PDMovieResponse!
+    var topRated: PDMovieResponse!
+    var categories: [PDCategory]!
     var categoryType: PDCategoryProtocol.Type!
     
     override func setUp() {
@@ -19,6 +23,22 @@ class PDLibraryTests: XCTestCase {
         MockCategory.categories = nil
         MockCategory.error = nil
         session = MockDecodableSession()
+        let data = "{ \"response\": { \"docs\": [{\"identifier\": \"fakeid\",\"title\": \"Test\", \"description\": \"\", \"avg_rating\": \"4.5\"}, {\"identifier\": \"fakeid\",\"title\": \"Test\", \"description\": \"\", \"avg_rating\": \"4.5\"}, {\"identifier\": \"fakeid\",\"title\": \"Test\", \"description\": \"\", \"avg_rating\": \"4.5\"}, {\"identifier\": \"fakeid\",\"title\": \"Test\", \"description\": \"\", \"avg_rating\": \"4.5\"}, {\"identifier\": \"fakeid\",\"title\": \"Test\", \"description\": \"\", \"avg_rating\": \"4.5\"}, {\"identifier\": \"fakeid\",\"title\": \"Test\", \"description\": \"\", \"avg_rating\": \"4.5\"}, {\"identifier\": \"fakeid\",\"title\": \"Test\", \"description\": \"\", \"avg_rating\": \"4.5\"}] } }".data(using: .utf8)
+        categories = try! JSONDecoder.init().decode([PDCategory].self, from: """
+        [{
+            "name": "Drama",
+            "thumbnailURL": "",
+            "tags": ["Drama"]
+        },
+        {
+            "name": "Drama",
+            "thumbnailURL": "",
+            "tags": ["Drama"]
+        }]
+        """.data(using: .utf8)!)
+        recentlyAdded = try? JSONDecoder().decode(PDMovieResponse.self, from: data!)
+        mostWatched = try? JSONDecoder().decode(PDMovieResponse.self, from: data!)
+        topRated = try? JSONDecoder().decode(PDMovieResponse.self, from: data!)
     }
     
     func test_failure_no_error_returns_fallback_error() {
@@ -69,5 +89,26 @@ class PDLibraryTests: XCTestCase {
         }
         wait(for: [exp], timeout: 0.1)
     }
+    
+    func test_successful_response() {
+        let exp = expectation(description: "successful library")
+        session.topRatedError = nil
+        session.mostWatchedError = nil
+        session.recentlyAddedError = nil
+        session.topRatedResponse = topRated
+        session.mostWatchedResponse = mostWatched
+        session.recentlyAddedResponse = recentlyAdded
+        MockCategory.categories = categories
+         PDLibrary.library(categoryType: categoryType, session: session, completionQueue: OperationQueue.main) { (library, error) in
+            XCTAssertEqual(library!.featured.count, 5)
+            XCTAssertEqual(library!.recentlyAdded.count, self.recentlyAdded.docs.count - 5)
+            XCTAssertEqual(library!.mostWatched.count, self.mostWatched.docs.count)
+            XCTAssertEqual(library!.topRated.count, self.topRated.docs.count)
+            XCTAssertEqual(library!.categories.count, self.categories.count)
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 0.1)
+    }
 
 }
+
