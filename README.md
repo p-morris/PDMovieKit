@@ -17,6 +17,7 @@
     - [2) List movie categories](#2-list-movie-categories)
     - [3) List movies within a category](#3-list-movies-within-a-category)
     - [4) Get the metadata for a movie](#4-get-the-metadata-for-a-movie)
+    - [5) Get a `PDLibrary`](#5-get-a-pdlibrary)
   - [Issues and Requests](#issues-and-requests)
 
 ## Introduction
@@ -164,6 +165,27 @@ A `PDMovieMetaData` is another simple data structure, comprising of `description
 - The `directorName` is an optional `String?` representing the director of the movie.
 - The `runTime` is an optional `String?` representing the amount of the time the movie lasts.
 - The `thumbnailURL` is an remote `URL` at which a thumbnail image for the movie may be found.
+
+### 5) Get a `PDLibrary`
+
+The `PDLibrary` class is provided to give you easy access to collections of movies, and categories. This object can be handy for creating a homescreen,
+for discovering movies.
+
+To get access to a `PDLibrary` object, use the class method `library(session:completionQueue:completion:)`:
+
+PDLibrary.library(session: URLSession.shared, completionQueue: OperationQueue.main) { library, error in 
+  if let library = library {
+    // Show the movies and categories
+  }
+}
+
+A `PDLibrary` object is another simple data structure, comprise of `categories`, `featured`, `recentlyAdded`, `mostWatched` and `topRated` properties.
+
+- The `categories` property is an array of available `PDCategory` objects.
+- The `featured` property is a collection of the 5 currently featured movies.
+- The `recentlyAdded` array, is a collection of 50 of the most recently added PD movies.
+- The `mostWatched` array, is a collection of 50 movies, ordered by the number of downloads that have occured.
+- The `topRated` array, is a collection 50 movies with the highest average rating.
 
 ## Issues and Requests
 
