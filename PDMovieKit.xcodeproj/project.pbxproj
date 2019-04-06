@@ -38,6 +38,8 @@
 		728209BF224E5AD300955C63 /* PDMovieMetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728208E7224E545E00955C63 /* PDMovieMetaData.swift */; };
 		728209C0224E5AD300955C63 /* URLSession+Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728208E4224E545E00955C63 /* URLSession+Decoding.swift */; };
 		728209F0224E5F4500955C63 /* PDMovieKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 728209EF224E5F4500955C63 /* PDMovieKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72BC626F2258D16C00D71CC1 /* URLBuilding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72446C012257758B0091842B /* URLBuilding.swift */; };
+		72BC62702258D16C00D71CC1 /* PDLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72446BFB22568DF70091842B /* PDLibrary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -409,6 +411,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72BC626F2258D16C00D71CC1 /* URLBuilding.swift in Sources */,
+				72BC62702258D16C00D71CC1 /* PDLibrary.swift in Sources */,
 				728209C0224E5AD300955C63 /* URLSession+Decoding.swift in Sources */,
 				728209BC224E5AD300955C63 /* EndPoint.swift in Sources */,
 				728209BF224E5AD300955C63 /* PDMovieMetaData.swift in Sources */,
