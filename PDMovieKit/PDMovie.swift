@@ -50,9 +50,9 @@ public struct PDMovie: Decodable {
      Fetches the metadata for the current movie.
      
      - Parameters:
-     - session: The `URLSession` to use for the request.
-     - completionQueue: The `OperationQueue` on which to execute `completion`.
-     - completion: The code block to be executed asynchronously on `completionQueue` once the request is complete.
+        - session: The `URLSession` to use for the request.
+        - completionQueue: The `OperationQueue` on which to execute `completion`.
+        - completion: The code block to be executed asynchronously on `completionQueue` once the request is complete.
      Includes parameter for the returned `PDMetaData` (if retrieved successfully), or an error if not.
      */
     public func metaData(session: URLSession = URLSession.shared,
