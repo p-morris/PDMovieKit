@@ -43,8 +43,15 @@ public struct PDMovie: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.identifier = try container.decode(String.self, forKey: .identifier)
         self.title = try container.decode(String.self, forKey: .title)
-        self.description = try container.decode(String.self, forKey: .description)
         self.rating = try Double(container.decodeIfPresent(String.self, forKey: .rating) ?? "0.0") ?? 0.0
+        // Archive.org data can be inconsistent for the `description` key.
+        // Very rarely, this value will either be nil or an array.
+        // So, provide a fallback description for these rare cases.
+        do {
+            self.description = try container.decode(String.self, forKey: .description)
+        } catch {
+            self.description = "\(self.title) - Rated: \(self.rating)"
+        }
     }
     /**
      Fetches the metadata for the current movie.
