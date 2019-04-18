@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7221DFCB22689B630029ED32 /* String+PercentEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7221DFCA22689B630029ED32 /* String+PercentEncoding.swift */; };
+		7221DFCD22689D040029ED32 /* PDPoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7221DFCC22689D040029ED32 /* PDPoster.swift */; };
+		7221DFCF2268AA0C0029ED32 /* PDPosterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7221DFCE2268AA0C0029ED32 /* PDPosterTests.swift */; };
 		72446BFC22568DF70091842B /* PDLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72446BFB22568DF70091842B /* PDLibrary.swift */; };
 		72446C022257758B0091842B /* URLBuilding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72446C012257758B0091842B /* URLBuilding.swift */; };
 		72446C0422577B7A0091842B /* URLBuildingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72446C0322577B7A0091842B /* URLBuildingTests.swift */; };
@@ -53,6 +56,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7221DFCA22689B630029ED32 /* String+PercentEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+PercentEncoding.swift"; sourceTree = "<group>"; };
+		7221DFCC22689D040029ED32 /* PDPoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDPoster.swift; sourceTree = "<group>"; };
+		7221DFCE2268AA0C0029ED32 /* PDPosterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDPosterTests.swift; sourceTree = "<group>"; };
+		7221DFD62268AF410029ED32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7221DFD82268AF410029ED32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7221DFDB2268AF410029ED32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7221DFDD2268AF430029ED32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7221DFE02268AF430029ED32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7221DFE22268AF430029ED32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72446BFB22568DF70091842B /* PDLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDLibrary.swift; sourceTree = "<group>"; };
 		72446C012257758B0091842B /* URLBuilding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLBuilding.swift; sourceTree = "<group>"; };
 		72446C0322577B7A0091842B /* URLBuildingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuildingTests.swift; sourceTree = "<group>"; };
@@ -112,12 +124,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7221DFD52268AF410029ED32 /* TestApp */ = {
+			isa = PBXGroup;
+			children = (
+				7221DFD62268AF410029ED32 /* AppDelegate.swift */,
+				7221DFD82268AF410029ED32 /* ViewController.swift */,
+				7221DFDA2268AF410029ED32 /* Main.storyboard */,
+				7221DFDD2268AF430029ED32 /* Assets.xcassets */,
+				7221DFDF2268AF430029ED32 /* LaunchScreen.storyboard */,
+				7221DFE22268AF430029ED32 /* Info.plist */,
+			);
+			path = TestApp;
+			sourceTree = "<group>";
+		};
 		728208BE224E544200955C63 = {
 			isa = PBXGroup;
 			children = (
 				728208CA224E544200955C63 /* PDMovieKit */,
 				728208D5224E544200955C63 /* PDMovieKitTests */,
 				728209B4224E5AC800955C63 /* PDMovieKit_tvOS */,
+				7221DFD52268AF410029ED32 /* TestApp */,
 				728208C9224E544200955C63 /* Products */,
 				72820924224E553200955C63 /* Frameworks */,
 			);
@@ -137,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				728208E3224E545E00955C63 /* categories.json */,
+				7221DFCA22689B630029ED32 /* String+PercentEncoding.swift */,
 				728208E4224E545E00955C63 /* URLSession+Decoding.swift */,
 				72446C012257758B0091842B /* URLBuilding.swift */,
 				728208E5224E545E00955C63 /* EndPoint.swift */,
@@ -144,6 +171,7 @@
 				728208E6224E545E00955C63 /* PDMovie.swift */,
 				728208E7224E545E00955C63 /* PDMovieMetaData.swift */,
 				72446BFB22568DF70091842B /* PDLibrary.swift */,
+				7221DFCC22689D040029ED32 /* PDPoster.swift */,
 				728209EF224E5F4500955C63 /* PDMovieKit.h */,
 				728208CC224E544200955C63 /* Info.plist */,
 			);
@@ -184,6 +212,7 @@
 				728208F4224E547A00955C63 /* URLSession+DecodingTests.swift */,
 				72446C0322577B7A0091842B /* URLBuildingTests.swift */,
 				72446C05225783A10091842B /* PDLibraryTests.swift */,
+				7221DFCE2268AA0C0029ED32 /* PDPosterTests.swift */,
 				728208F2224E547900955C63 /* PDMovieKitTests-Bridging-Header.h */,
 			);
 			path = Tests;
@@ -377,10 +406,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				728208EC224E545E00955C63 /* EndPoint.swift in Sources */,
+				7221DFCB22689B630029ED32 /* String+PercentEncoding.swift in Sources */,
 				728208EE224E545E00955C63 /* PDMovieMetaData.swift in Sources */,
 				728208ED224E545E00955C63 /* PDMovie.swift in Sources */,
 				72446BFC22568DF70091842B /* PDLibrary.swift in Sources */,
 				72446C022257758B0091842B /* URLBuilding.swift in Sources */,
+				7221DFCD22689D040029ED32 /* PDPoster.swift in Sources */,
 				728208EF224E545E00955C63 /* PDCategory.swift in Sources */,
 				728208EB224E545E00955C63 /* URLSession+Decoding.swift in Sources */,
 			);
@@ -393,6 +424,7 @@
 				728208FA224E547A00955C63 /* PDMovieTests.swift in Sources */,
 				728208FD224E547A00955C63 /* PDMovieMetaDataTests.swift in Sources */,
 				72446C082257A6F80091842B /* MockCategory.swift in Sources */,
+				7221DFCF2268AA0C0029ED32 /* PDPosterTests.swift in Sources */,
 				72820907224E548300955C63 /* MockEndPoint.swift in Sources */,
 				728208FF224E547A00955C63 /* EndPointTests.swift in Sources */,
 				72820905224E548300955C63 /* MockDecodable.swift in Sources */,
@@ -430,6 +462,25 @@
 			targetProxy = 728208D3224E544200955C63 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7221DFDA2268AF410029ED32 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7221DFDB2268AF410029ED32 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7221DFDF2268AF430029ED32 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7221DFE02268AF430029ED32 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		728208DA224E544200955C63 /* Debug */ = {
