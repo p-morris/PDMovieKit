@@ -72,6 +72,32 @@ public struct PDMovie: Decodable {
             }
         }
     }
+    /**
+     Fetches the URL of a movie poster, if one can be found via the OMDB API.
+     
+     - Parameters:
+     - omdbAPIKey: The OMDB API Key to use for the search.
+     - session: The `URLSession` to use for the request.
+     - completionQueue: The `OperationQueue` on which to execute `completion`.
+     - completion: The code block to be executed asynchronously on `completionQueue` once the request is complete.
+     Includes parameter for the returned `URL` (if retrieved successfully), or `nil` if not.
+     */
+    public func poster(omdbAPIKey: String,
+                       session: URLSession = URLSession.shared,
+                       completionQueue: OperationQueue = OperationQueue.main,
+                       completion: @escaping (URL?) -> Void) {
+        let endPoint = ArchiveEndPoint.poster(omdbKey: omdbAPIKey, title: title)
+        session.decodableRequest(with: endPoint) { (response: PDPosterResponse?, _) in
+            guard let response = response else {
+                completionQueue.addOperation { completion(nil) }
+                return
+            }
+            let posterURL = response.searchResults.filter({ $0.year < 1980 }).first?.posterURL
+            completionQueue.addOperation {
+                completion(posterURL)
+            }
+        }
+    }
 }
 
 /// Represents a response from the Archive.org/advanced_search endpoint, which

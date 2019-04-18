@@ -76,4 +76,9 @@ class EndPointTests: XCTestCase {
         XCTAssertEqual(endPoint.url!.description, "https://archive.org/advancedsearch.php?q=collection:(feature_films)%20AND%20mediatype:(movies)&fl%5B%5D=identifier&fl%5B%5D=avg_rating&fl%5B%5D=description&fl%5B%5D=title&rows=50&output=json&page=1&sort%5B%5D=avg_rating%20desc&sort%5B%5D=&sort%5B%5D=")
     }
     
+    func test_poster_url() {
+        let endPoint = ArchiveEndPoint.poster(omdbKey: "testkey", title: "Test Movie")
+        XCTAssertEqual(endPoint.url!.description, "http://omdbapi.com/?apikey=testkey&s=Test%20Movie")
+    }
+    
 }

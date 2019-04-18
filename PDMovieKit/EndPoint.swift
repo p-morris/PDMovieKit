@@ -44,6 +44,13 @@ internal enum ArchiveEndPoint: EndPoint {
         - movie: The movie that you wish to retrive metadata for.
     */
     case metaData(movie: PDMovie)
+    /**
+     Used to retrieve the poster image for a given movie from OMDB.
+     - Parameters:
+     - omdbKey: The OMDB API key to use for the request.
+     - title: The title of the movie to search for a poster for.
+     */
+    case poster(omdbKey: String, title: String)
     /// The url for the specified request.
     var url: URL? {
         switch self {
@@ -61,6 +68,8 @@ internal enum ArchiveEndPoint: EndPoint {
         case .mostWatched: return URL(with: [.featureFilms, .movieMediaType])
         /// A URL for retrieving a list of the highest rated movies. Maximum movies in response is 50.
         case .topRated: return URL(with: [.featureFilms, .movieMediaType], sortedBy: .averageRating)
+        /// A URL for retrieving a list of matches via the OMDB databasse
+        case let .poster(omdbKey, title): return URL(string: "https://omdbapi.com/?apikey=\(omdbKey)&s=\(title.addingPercentEncoding() ?? "")")
         }
     }
 }

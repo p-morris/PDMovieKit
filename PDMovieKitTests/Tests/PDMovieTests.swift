@@ -84,5 +84,44 @@ class PDMovieTests: XCTestCase {
         let response = try? JSONDecoder().decode(PDMovieResponse.self, from: data!)
         XCTAssertEqual(response!.docs.count, 2)
     }
+    
+    func test_poster_completes_for_invalid_response() {
+        let exp = expectation(description: "poster")
+        session.returnData = nil
+        session.returnError = NSError(domain: "", code: 0, userInfo: nil)
+        movie.poster(omdbAPIKey: "testkey", session: session) { (url) in
+            XCTAssertNil(url)
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 0.1)
+    }
+    
+    func test_poster_returns_first_pre_1980_result() {
+        let data = """
+        {
+            "Search": [{
+            "Year": "1981",
+            "Title": "A Movie",
+            "Poster": "https://google.com/poster3.png"
+        }, {
+            "Year": "1976",
+            "Title": "A Movie",
+            "Poster": "https://google.com/poster2.png"
+        }, {
+            "Year": "1974",
+            "Title": "A Movie",
+            "Poster": "https://google.com/poster1.png"
+        }]
+        }
+        """.data(using: .utf8)!
+        session.returnData = data
+        let exp = expectation(description: "poster")
+        movie.poster(omdbAPIKey: "testkey", session: session) { (url) in
+            XCTAssertNotNil(url)
+            XCTAssertEqual(url!.description, "https://google.com/poster2.png")
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 0.1)
+    }
 
 }
