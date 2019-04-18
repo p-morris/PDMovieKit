@@ -69,7 +69,7 @@ internal enum ArchiveEndPoint: EndPoint {
         /// A URL for retrieving a list of the highest rated movies. Maximum movies in response is 50.
         case .topRated: return URL(with: [.featureFilms, .movieMediaType], sortedBy: .averageRating)
         /// A URL for retrieving a list of matches via the OMDB databasse
-        case let .poster(omdbKey, title): return URL(string: "https://omdbapi.com/?apikey=\(omdbKey)&s=\(title.addingPercentEncoding() ?? "")")
+        case let .poster(omdbKey, title): return URL(string: "https://omdbapi.com/?apikey=\(omdbKey)&s=\(title.addingPercentURLEncoding() ?? "")")
         }
     }
 }

@@ -44,7 +44,8 @@ struct PDPosterResponse: Decodable {
     /**
      Initializes a `PDPoster` object using a given `Decoder`.
      
-     The decoder must be able to decode "Search" array which contains JSON objects which may be parsed to `PDPoster` objects.
+     The decoder must be able to decode "Search" array which contains JSON objects
+     which may be parsed to `PDPoster` objects.
      
      - Parameter decoder: The decoder to use for retrieving property values.
      */

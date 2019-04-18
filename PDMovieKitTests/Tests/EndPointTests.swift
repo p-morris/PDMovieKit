@@ -78,7 +78,7 @@ class EndPointTests: XCTestCase {
     
     func test_poster_url() {
         let endPoint = ArchiveEndPoint.poster(omdbKey: "testkey", title: "Test Movie")
-        XCTAssertEqual(endPoint.url!.description, "http://omdbapi.com/?apikey=testkey&s=Test%20Movie")
+        XCTAssertEqual(endPoint.url!.description, "https://omdbapi.com/?apikey=testkey&s=Test%20Movie")
     }
     
 }

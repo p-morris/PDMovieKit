@@ -9,7 +9,7 @@
 import Foundation
 
 extension String {
-    func addingPercentEncoding() -> String? {
+    func addingPercentURLEncoding() -> String? {
         let unreserved = "-._~/?"
         let allowed = NSMutableCharacterSet.alphanumeric()
         allowed.addCharacters(in: unreserved)
